@@ -242,32 +242,22 @@
         <article role="main" id="furo-main-content">
           <section id="module-invoco.core.base">
 <span id="api-reference"></span><h1>API Reference<a class="headerlink" href="#module-invoco.core.base" title="Link to this heading">¶</a></h1>
-<p>Base task definitions for Invoco.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="invoco.core.base.Task">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">invoco.core.base.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><a class="reference internal" href="_modules/invoco/core/base.html#Task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#invoco.core.base.Task" title="Link to this definition">¶</a></dt>
 <dd><p>Base class for all Invoco tasks.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="invoco.core.base.Task.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/invoco/core/base.html#Task.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#invoco.core.base.Task.run" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NoReturn</span></span></span><a class="reference internal" href="_modules/invoco/core/base.html#Task.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#invoco.core.base.Task.run" title="Link to this definition">¶</a></dt>
 <dd><p>Execute the task. Must be implemented by subclasses.</p>
 </dd></dl>
 
 </dd></dl>
 
-<p id="module-invoco.core.scheduler">Task scheduling and execution for Invoco.</p>
-<dl class="py function">
+<dl class="py function" id="module-invoco.core.scheduler">
 <dt class="sig sig-object py" id="invoco.core.scheduler.run_tasks">
-<span class="sig-prename descclassname"><span class="pre">invoco.core.scheduler.</span></span><span class="sig-name descname"><span class="pre">run_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/invoco/core/scheduler.html#run_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#invoco.core.scheduler.run_tasks" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">invoco.core.scheduler.</span></span><span class="sig-name descname"><span class="pre">run_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/invoco/core/scheduler.html#run_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#invoco.core.scheduler.run_tasks" title="Link to this definition">¶</a></dt>
 <dd><p>Stub scheduler that yields fake results.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>task_list</strong> (<em>list</em><em>[</em><em>dict</em><em>]</em>) – list of tasks with ‘name’ and ‘args’.</p>
-</dd>
-<dt class="field-even">Yields<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>dict</em> – status updates for each task.</p>
-</dd>
-</dl>
 </dd></dl>
 
 </section>
