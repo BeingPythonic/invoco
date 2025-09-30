@@ -1,14 +1,8 @@
-"""Task scheduling and execution for Invoco."""
+from collections.abc import Generator
+from typing import Any
 
 
-def run_tasks(task_list):
-    """Stub scheduler that yields fake results.
-
-    Args:
-        task_list (list[dict]): list of tasks with 'name' and 'args'.
-
-    Yields:
-        dict: status updates for each task.
-    """
+def run_tasks(task_list: list[dict[str, Any]]) -> Generator[str, None, None]:
+    """Stub scheduler that yields fake results."""
     for task in task_list:
-        yield {"task": task["name"], "status": "done", "output": None}
+        yield f"Executed {task['name']} with args {task['args']}"

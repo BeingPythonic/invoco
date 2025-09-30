@@ -1,7 +1,7 @@
 # 📦 Invoco
 
 [![Tests](https://github.com/beingpythonic/invoco/actions/workflows/tests.yml/badge.svg)](https://github.com/beingpythonic/invoco/actions/workflows/tests.yml)  
-[![Docs](https://github.com/beingpythonic/invoco/actions/workflows/docs.yml/badge.svg)](https://beingpythonic.github.io/invoco/)  
+[![Docs](https://github.com/beingpythonic/invoco/actions/workflows/docs.yml/badge.svg)](https://beingpythonic.github.io/invoco/)
 [![Coverage](https://codecov.io/gh/beingpythonic/invoco/branch/main/graph/badge.svg)](https://codecov.io/gh/beingpythonic/invoco)  
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/invoco)](https://pypi.org/project/invoco/)  
 [![License](https://img.shields.io/github/license/beingpythonic/invoco)](LICENSE)  

@@ -1,12 +1,9 @@
-"""Dummy task for testing."""
-
-from invoco.core.base import Task
 from invoco.core.decorators import log_task
 
 
-class Dummy(Task):
-    """A simple no-op task for testing."""
+class DummyTask:
+    """A simple demo task."""
 
     @log_task
-    def run(self, *args, **kwargs):
+    def run(self, *args: object, **kwargs: object) -> str:
         return "Hello from Dummy task"
