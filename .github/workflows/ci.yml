@@ -12,6 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       # --------------------------
       # Setup
@@ -25,19 +26,26 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip   # enables pip caching automatically
+
+      - name: Upgrade pip
+        run: pip install --upgrade pip
 
       - name: Install Hatch
         run: pip install hatch
 
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      # --------------------------
+      # Pre-commit checks
+      # --------------------------
       - name: Run pre-commit checks
         run: pre-commit run --all-files --config .pre-commit-config-ci.yaml
 
-
       # --------------------------
-      # Run full CI pipeline
+      # Project pipeline (tests + docs)
       # --------------------------
-      # Call the makefile CI
-      # which runs project pipeline (tests + doc)
       - name: Run CI checks
         run: make ci
 
