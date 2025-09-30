@@ -30,3 +30,58 @@ Install (after release on PyPI):
 
 ```bash
 pip install invoco
+```
+
+For now, clone locally:
+
+```bash
+git clone git@github.com:beingpythonic/invoco.git
+cd invoco
+hatch env create
+make test
+```
+
+---
+
+## 🛠 Usage Example
+
+```python
+from invoco.core.scheduler import run_tasks
+
+task_list = [
+    {"name": "dummy", "args": {}}
+]
+
+for result in run_tasks(task_list):
+    print(result)
+```
+
+CLI debugging:
+
+```bash
+invoco examples/sample_tasks.json
+```
+
+---
+
+## 📖 Documentation
+
+Full docs are published here:  
+👉 [Invoco Documentation](https://beingpythonic.github.io/invoco/)
+
+---
+
+## 🤝 Contributing
+
+Want to help? Check out the [Developer Guide](https://beingpythonic.github.io/invoco/dev_guide.html).  
+
+- Run tests: `make test`  
+- Lint: `make lint`  
+- Typecheck: `make typecheck`  
+- Build docs: `make docs`
+
+---
+
+## 📜 License
+
+MIT License © 2025 Christopher Bailey  
