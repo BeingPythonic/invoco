@@ -1,23 +1,21 @@
----
-name: 🐛 Bug Report
-about: Report a reproducible bug or regression
-labels: bug
+name: Bug Report
+about: Report a reproducible bug or regression in Invoco
+labels: type/bug
 ---
 
-## Describe the bug
-<!-- A clear and concise description of what the bug is. -->
+## Description
+<!-- A clear and concise description of the bug. -->
 
-## To Reproduce
-Steps to reproduce the behavior:
+## Steps to Reproduce
 1. ...
 2. ...
 3. ...
 
-## Expected behavior
-<!-- A clear and concise description of what you expected to happen. -->
+## Expected Behavior
+<!-- What you expected to happen. -->
 
-## Actual behavior
-<!-- What actually happened. Include error messages if any. -->
+## Actual Behavior
+<!-- What actually happened. Include error messages and logs if available. -->
 
 ## Environment
 - OS: [e.g. Ubuntu 22.04]
@@ -25,5 +23,5 @@ Steps to reproduce the behavior:
 - Invoco version: `pip show invoco`
 - Any relevant dependencies:
 
-## Additional context
-<!-- Add any other context about the problem here. -->
+## Additional Context
+<!-- Add any other context, configuration, or details that might help. -->

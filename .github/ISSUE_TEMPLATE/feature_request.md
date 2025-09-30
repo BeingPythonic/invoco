@@ -1,20 +1,22 @@
----
-name: 💡 Feature Request
-about: Suggest a new idea for Invoco
-labels: enhancement
+name: "Feature Request"
+about: Propose a new feature or functionality for Invoco
+labels: type/feature
 ---
 
 ## Summary
-<!-- Describe the feature briefly. -->
+<!-- One or two sentences describing the feature. Keep it short and clear. -->
 
 ## Motivation
-<!-- Why is this feature useful? What problem does it solve? -->
+<!-- Why is this feature important? What problem does it solve for Invoco users? -->
 
-## Example use case
-<!-- Show a short example of how this feature would be used. -->
+## Proposed Solution
+<!-- High-level description of how this could be implemented. Not code-level, just the idea. -->
 
-## Alternatives considered
-<!-- Describe any alternative solutions you've thought about. -->
+## Example Usage
+<!-- Show a minimal example (pseudo-code or CLI) of how this feature would be used. -->
 
-## Additional context
-<!-- Anything else you'd like to add. -->
+## Alternatives
+<!-- List any alternative approaches or prior art you've considered. -->
+
+## Additional Context
+<!-- Any related issues, references, or notes. -->
