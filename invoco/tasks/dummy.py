@@ -5,5 +5,5 @@ class DummyTask:
     """A simple demo task."""
 
     @log_task
-    def run(self, *args: object, **kwargs: object) -> str:
+    def run(self: "DummyTask", *args: object, **kwargs: object) -> str:
         return "Hello from Dummy task"

@@ -22,6 +22,10 @@ ENV/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.pdm-build/
+
+# Coverage
+.coverage
 coverage.xml
 htmlcov/
 
@@ -36,3 +40,4 @@ site/
 # OS
 .DS_Store
 Thumbs.db
+

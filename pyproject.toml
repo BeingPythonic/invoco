@@ -9,6 +9,13 @@ description = "A task execution engine for AI-driven tool calls"
 authors = [{ name = "Christopher Bailey", email = "beingpythonic@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.10"
+license = { text = "MIT"}
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+keywords = ["ai", "tasks", "scheduler", "tool-calls", "automation"]
 dependencies = []
 
 [project.scripts]
