@@ -41,7 +41,10 @@ jobs:
       # Pre-commit checks
       # --------------------------
       - name: Run pre-commit checks
-        run: pre-commit run --all-files --config .pre-commit-config-ci.yaml
+        run: |
+          pre-commit run ruff --all-files
+          pre-commit run black --all-files
+          pre-commit run mypy --all-files
 
       # --------------------------
       # Project pipeline (tests + docs)
