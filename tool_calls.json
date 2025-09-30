@@ -1,0 +1,53 @@
+{
+    "tasks": [
+      {
+        "name": "translate_text",
+        "args": {
+          "text": "Hello, how are you?",
+          "target_language": "es"
+        }
+      },
+      {
+        "name": "run_shell_command",
+        "args": {
+          "command": "ls -la /home/user"
+        }
+      },
+      {
+        "name": "save_to_file",
+        "args": {
+          "path": "logs/report.txt",
+          "content": "Weather: Sunny, 22°C"
+        }
+      },
+      {
+        "name": "send_email",
+        "args": {
+          "to": "admin@example.com",
+          "subject": "System Report",
+          "body": "All systems operational."
+        }
+      },
+      {
+        "name": "summarize_text",
+        "args": {
+          "text": "Python 3.13 introduces faster startup times...",
+          "max_length": 50
+        }
+      },
+      {
+        "name": "search_web",
+        "args": {
+          "query": "latest Python release notes"
+        }
+      },
+      {
+        "name": "fetch_weather",
+        "args": {
+          "city": "New York",
+          "units": "metric"
+        }
+      }
+    ]
+  }
+  

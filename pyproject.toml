@@ -1,0 +1,97 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "invoco"
+version = "0.1.0"
+description = "A task execution engine for AI-driven tool calls"
+authors = [{ name = "Christopher Bailey", email = "beingpythonic@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+invoco = "invoco.cli.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["invoco"]
+
+
+# =================================
+# Ruff (lint + import/style checks)
+# =================================
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+fix = true
+
+[tool.ruff.lint]
+# Enabled rule families:
+# E, F   → pycodestyle + pyflakes (syntax, undefined names, etc.)
+# I      → import sorting
+# B      → bugbear (common bugs)
+# UP     → pyupgrade (modern syntax)
+# SIM    → simplify (unnecessary constructs)
+# ANN    → type annotation checks
+select = ["E", "F", "I", "B", "UP", "SIM", "ANN"]
+
+# Ignored rules:
+# E501   → line length (handled by Black)
+ignore = ["E501"]
+
+# Excluded paths
+exclude = ["docs"]
+
+
+# ======================
+# Mypy (type checking)
+# ======================
+[tool.mypy]
+python_version = "3.9"
+check_untyped_defs = true
+disallow_incomplete_defs = false
+disallow_untyped_defs = false
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+
+
+# =====================
+# Black (formatter)
+# =====================
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+
+
+# ====================
+# Pytest (test runner)
+# ====================
+[tool.pytest.ini_options]
+addopts = "-q --disable-warnings"
+testpaths = ["tests"]
+
+
+# ===================================
+# Hatch Environments & Dev Scripts
+# ===================================
+[tool.hatch.envs.default]
+dependencies = [
+  "pytest",
+  "pytest-cov",
+  "ruff",
+  "black",
+  "sphinx",
+  "furo",
+  "mypy",
+  "pre-commit"
+]
+
+[tool.hatch.envs.default.scripts]
+test = "pytest"
+lint = "ruff check invoco"
+format = "black invoco"
+typecheck = "mypy invoco"
+docs = "sphinx-build docs docs/_build/html"
