@@ -57,4 +57,4 @@ docs-clean:
 .PHONY: ci
 
 # CI: clean build, run tests, build docs
-ci: clean test docs
+ci: clean coverage docs
