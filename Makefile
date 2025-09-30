@@ -12,7 +12,7 @@ dist:
 	hatch build
 
 
-# --- Quality Checks ---
+# --- Quality Checks (dev env) ---
 .PHONY: lint format typecheck check
 
 lint:
@@ -28,21 +28,21 @@ typecheck:
 check: lint format typecheck
 
 
-# --- Testing ---
+# --- Testing (test env) ---
 .PHONY: test coverage
 
 test:
-	hatch run dev:test
+	hatch run test:pytest
 
 coverage:
-	hatch run dev:pytest --cov=invoco --cov-report=term-missing
+	hatch run test:pytest --cov=invoco --cov-report=term-missing
 
 
-# --- Docs ---
+# --- Docs (docs env) ---
 .PHONY: docs docs-serve docs-clean
 
 docs:
-	hatch run dev:docs
+	hatch run docs:sphinx-build docs docs/_build/html
 
 # Serve docs locally at http://localhost:8000
 docs-serve:
@@ -56,4 +56,5 @@ docs-clean:
 # --- CI Pipeline ---
 .PHONY: ci
 
-ci: clean check test docs
+# CI: clean build, run tests, build docs
+ci: clean test docs

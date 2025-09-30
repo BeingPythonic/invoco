@@ -86,16 +86,46 @@ testpaths = ["tests"]
 # Hatch Environments & Dev Scripts
 # ===================================
 [tool.hatch.envs.default]
-dependencies = [".[dev,test,docs]"]
+dependencies = [
+  "ruff",
+  "black",
+  "mypy",
+  "pre-commit",
+  "pytest",
+  "pytest-cov",
+  "sphinx>=8.0",
+  "furo",
+  "myst-parser",
+  "linkify-it-py",
+]
 
 [tool.hatch.envs.test]
-dependencies = [".[test]"]
+dependencies = [
+  "pytest",
+  "pytest-cov",
+]
 
 [tool.hatch.envs.docs]
-dependencies = [".[docs]"]
+dependencies = [
+  "sphinx>=8.0",
+  "furo",
+  "myst-parser",
+  "linkify-it-py",
+]
 
 [tool.hatch.envs.dev]
-dependencies = [".[dev,test,docs]"]
+dependencies = [
+  "ruff",
+  "black",
+  "mypy",
+  "pre-commit",
+  "pytest",
+  "pytest-cov",
+  "sphinx>=8.0",
+  "furo",
+  "myst-parser",
+  "linkify-it-py",
+]
 
 [tool.hatch.envs.dev.scripts]
 test = "pytest"

@@ -29,11 +29,15 @@ jobs:
       - name: Install Hatch
         run: pip install hatch
 
+      - name: Run pre-commit checks
+        run: pre-commit run --all-files --config .pre-commit-config-ci.yaml
+
+
       # --------------------------
       # Run full CI pipeline
       # --------------------------
-      # This calls your Makefile target `ci`
-      # which runs lint, typecheck, tests, and docs build.
+      # Call the makefile CI
+      # which runs project pipeline (tests + doc)
       - name: Run CI checks
         run: make ci
 

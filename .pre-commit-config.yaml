@@ -1,14 +1,35 @@
 repos:
+  # --------------------------
+  # Python Quality
+  # --------------------------
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.4.0
     hooks:
       - id: ruff
-        args: [--fix]
+        args: [--fix, --exit-non-zero-on-fix]
+        stages: [commit]
+
   - repo: https://github.com/psf/black
     rev: 24.10.0
     hooks:
       - id: black
+        args: [--quiet]
+        stages: [commit]
+
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.11.0
     hooks:
       - id: mypy
+        args: [--cache-dir=.mypy_cache]
+
+  # --------------------------
+  # Hygiene / Safety
+  # --------------------------
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
