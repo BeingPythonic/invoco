@@ -3,7 +3,7 @@
 [![Tests](https://github.com/beingpythonic/invoco/actions/workflows/tests.yml/badge.svg)](https://github.com/beingpythonic/invoco/actions/workflows/tests.yml)
 [![Docs](https://github.com/beingpythonic/invoco/actions/workflows/docs.yml/badge.svg)](https://beingpythonic.github.io/invoco/)
 [![Coverage](https://codecov.io/gh/beingpythonic/invoco/branch/main/graph/badge.svg)](https://codecov.io/gh/beingpythonic/invoco)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/invoco)](https://pypi.org/project/invoco/)
+[![PyPI status](https://img.shields.io/badge/pypi-not--yet--released-lightgrey)](#)
 [![License](https://img.shields.io/github/license/beingpythonic/invoco?cacheBust=1)](LICENSE)
 
 **Invoco** is a Python project focused on executing structured task calls.  
