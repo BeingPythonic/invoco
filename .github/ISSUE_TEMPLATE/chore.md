@@ -1,3 +1,4 @@
+---
 name: Chore / Maintenance
 about: Request or track maintenance work such as CI, tests, or refactoring
 labels: type/chore

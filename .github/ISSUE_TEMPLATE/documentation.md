@@ -1,3 +1,4 @@
+---
 name: Documentation
 about: Report missing, unclear, or outdated documentation
 labels: type/docs
