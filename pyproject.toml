@@ -9,7 +9,7 @@ description = "A task execution engine for AI-driven tool calls"
 authors = [{ name = "Christopher Bailey", email = "beingpythonic@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT"}
+license = { text = "MIT" }
 classifiers = [
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: MIT License",
@@ -21,9 +21,26 @@ dependencies = []
 [project.scripts]
 invoco = "invoco.cli.main:main"
 
+[project.optional-dependencies]
+dev = [
+  "ruff",
+  "black",
+  "mypy",
+  "pre-commit",
+]
+test = [
+  "pytest",
+  "pytest-cov",
+]
+docs = [
+  "sphinx>=8.0",
+  "furo",
+  "myst-parser",
+  "linkify-it-py",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["invoco"]
-
 
 # =================================
 # Ruff (lint + import/style checks)
@@ -34,22 +51,9 @@ target-version = "py39"
 fix = true
 
 [tool.ruff.lint]
-# Enabled rule families:
-# E, F   → pycodestyle + pyflakes (syntax, undefined names, etc.)
-# I      → import sorting
-# B      → bugbear (common bugs)
-# UP     → pyupgrade (modern syntax)
-# SIM    → simplify (unnecessary constructs)
-# ANN    → type annotation checks
 select = ["E", "F", "I", "B", "UP", "SIM", "ANN"]
-
-# Ignored rules:
-# E501   → line length (handled by Black)
 ignore = ["E501"]
-
-# Excluded paths
 exclude = ["docs"]
-
 
 # ======================
 # Mypy (type checking)
@@ -64,14 +68,12 @@ warn_unused_ignores = true
 warn_redundant_casts = true
 warn_unused_configs = true
 
-
 # =====================
 # Black (formatter)
 # =====================
 [tool.black]
 line-length = 88
 target-version = ["py39"]
-
 
 # ====================
 # Pytest (test runner)
@@ -80,23 +82,22 @@ target-version = ["py39"]
 addopts = "-q --disable-warnings"
 testpaths = ["tests"]
 
-
 # ===================================
 # Hatch Environments & Dev Scripts
 # ===================================
 [tool.hatch.envs.default]
-dependencies = [
-  "pytest",
-  "pytest-cov",
-  "ruff",
-  "black",
-  "sphinx",
-  "furo",
-  "mypy",
-  "pre-commit"
-]
+dependencies = [".[dev,test,docs]"]
 
-[tool.hatch.envs.default.scripts]
+[tool.hatch.envs.test]
+dependencies = [".[test]"]
+
+[tool.hatch.envs.docs]
+dependencies = [".[docs]"]
+
+[tool.hatch.envs.dev]
+dependencies = [".[dev,test,docs]"]
+
+[tool.hatch.envs.dev.scripts]
 test = "pytest"
 lint = "ruff check invoco"
 format = "black invoco"

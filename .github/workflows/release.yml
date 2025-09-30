@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"   # Example: v0.1.0
+
+permissions:
+  contents: write
+  id-token: write   # Needed for trusted publishing
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # --------------------------
+      # Setup
+      # --------------------------
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Hatch
+        run: pip install hatch
+
+      # --------------------------
+      # Build distribution
+      # --------------------------
+      - name: Build wheel and sdist
+        run: hatch build
+
+      # --------------------------
+      # Publish to PyPI
+      # --------------------------
+      # Using Trusted Publishing (recommended)
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          print-hash: true

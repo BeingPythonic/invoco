@@ -1,22 +1,25 @@
-name: Docs
+name: CI
 
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  docs:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       # --------------------------
       # Setup
       # --------------------------
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,20 +29,20 @@ jobs:
       - name: Install Hatch
         run: pip install hatch
 
-      - name: Install dependencies
-        run: hatch run pip install sphinx furo
+      # --------------------------
+      # Run full CI pipeline
+      # --------------------------
+      # This calls your Makefile target `ci`
+      # which runs lint, typecheck, tests, and docs build.
+      - name: Run CI checks
+        run: make ci
 
       # --------------------------
-      # Build docs
+      # Upload Coverage
       # --------------------------
-      - name: Build Sphinx docs
-        run: hatch run sphinx-build -b html docs docs/_build/html
-
-      # --------------------------
-      # Deploy to GitHub Pages
-      # --------------------------
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build/html
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
+          fail_ci_if_error: true
