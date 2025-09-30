@@ -35,7 +35,7 @@ test:
 	hatch run test:pytest
 
 coverage:
-	hatch run test:pytest --cov=invoco --cov-report=term-missing
+	hatch run test:pytest --cov=invoco --cov-branch --cov-report=xml --cov-report=term-missing
 
 
 # --- Docs (docs env) ---
