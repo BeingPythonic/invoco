@@ -1,0 +1,24 @@
+
+# Base Commit Template
+
+# <type>(<scope>): <short summary>
+# | type: feat, fix, docs, style, refactor, test, chore
+# | scope: optional, e.g. core, tasks, docs
+# | summary: imperative tense, no period
+
+# Example:
+# style(core): add explicit self annotations
+
+# --------------------
+# Body (why / context)
+# --------------------
+# Use bullet points if multiple things changed.
+# - Explain *why* the change was made.
+# - Mention any tools that required the change (ruff, mypy, black).
+# - If it fixes a lint rule, list the rule (ANN101, ANN201).
+
+# --------------------
+# Footer (issues, breaking changes)
+# --------------------
+# Closes #123
+# BREAKING CHANGE: describe here if API breaks

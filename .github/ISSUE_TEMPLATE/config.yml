@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://beingpythonic.github.io/invoco/
+    about: Please check the docs first — your question may already be answered.
+  - name: 💬 Discussions
+    url: https://github.com/BeingPythonic/invoco/discussions
+    about: For general questions, ideas, or non-bug reports.
