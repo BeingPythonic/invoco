@@ -1,0 +1,42 @@
+name: Docs
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      # --------------------------
+      # Setup
+      # --------------------------
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Hatch
+        run: pip install hatch
+
+      - name: Install dependencies
+        run: hatch run pip install sphinx furo
+
+      # --------------------------
+      # Build docs
+      # --------------------------
+      - name: Build Sphinx docs
+        run: hatch run sphinx-build -b html docs docs/_build/html
+
+      # --------------------------
+      # Deploy to GitHub Pages
+      # --------------------------
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/_build/html
