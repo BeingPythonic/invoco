@@ -7,14 +7,14 @@ repos:
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
-        stages: [commit]
+        stages: [pre-commit]
 
   - repo: https://github.com/psf/black
     rev: 24.10.0
     hooks:
       - id: black
         args: [--quiet]
-        stages: [commit]
+        stages: [pre-commit]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.11.0
